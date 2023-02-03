@@ -1,12 +1,10 @@
-import type { FindPostById } from 'types/graphql'
-
 import type { CellSuccessProps, CellFailureProps } from '@redwoodjs/web'
 
 import Post from 'src/components/Post/Post'
 
 export const QUERY = gql`
   query FindPostById($id: Int!) {
-    post: post(id: $id) {
+    post(id: $id) {
       id
       title
       body
@@ -23,6 +21,6 @@ export const Failure = ({ error }: CellFailureProps) => (
   <div className="rw-cell-error">{error?.message}</div>
 )
 
-export const Success = ({ post }: CellSuccessProps<FindPostById>) => {
+export const Success = ({ post }: CellSuccessProps) => {
   return <Post post={post} />
 }

@@ -1,5 +1,3 @@
-import type { FindPostById } from 'types/graphql'
-
 import type { CellSuccessProps, CellFailureProps } from '@redwoodjs/web'
 
 import Article from 'src/components/Article'
@@ -23,6 +21,6 @@ export const Failure = ({ error }: CellFailureProps) => (
   <div style={{ color: 'red' }}>Error: {error.message}</div>
 )
 
-export const Success = ({ post }: CellSuccessProps<FindPostById>) => {
+export const Success = ({ post }: CellSuccessProps) => {
   return <Article article={post} />
 }
